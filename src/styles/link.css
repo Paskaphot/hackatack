@@ -1,14 +1,13 @@
 .fakeButton {
   text-decoration: none;
   display: inline-block;
-  padding: 0.5rem;
+  padding: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
   border-radius: var(--border-radius);
-  /* color: var(--light-color);
-    background-color: var(--gradient-main-color); */
-  background-color: var(--primary-main-color);
+  color: var(--light-color);
+  background: var(--gradient-main-color);
 }
 .fakeButton:hover {
-  /* color: var(--light-color);
-    background-color: var(--gradiant-light-color); */
-  background-color: var(--primary-dark-color);
+  background: var(--gradient-dark-color);
 }

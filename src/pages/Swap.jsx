@@ -2,6 +2,7 @@ import "../App.css";
 import React from "react";
 import axios from "axios";
 import Card from "../components/Card";
+import "../styles/pages/swap.css";
 
 function Swap() {
   const [search, setSearch] = React.useState();
@@ -64,36 +65,34 @@ function Swap() {
   };
 
   return (
-    <div className="Swap">
-      <div>
-        <Card
-          isFlipped={isFlipped}
-          image={search}
-          name={slug}
-          moreInfo={moreInfo}
-        />
-        {infoCard === false ? (
-          <div>
-            <button type="button" onClick={() => setRandom(randomNumber())}>
-              not match
-            </button>
-            <button
-              type="button"
-              onClick={() => {
-                setInfoCard(true);
-                setIsFlipped(true);
-              }}
-            >
-              match
-            </button>
-          </div>
-        ) : (
-          <button type="button" onClick={() => setInfoCard(false)}>
-            retour
+    <main className="swap">
+      <Card
+        isFlipped={isFlipped}
+        image={search}
+        name={slug}
+        moreInfo={moreInfo}
+      />
+      {infoCard === false ? (
+        <>
+          <button type="button" onClick={() => setRandom(randomNumber())}>
+            not match
           </button>
-        )}
-      </div>
-    </div>
+          <button
+            type="button"
+            onClick={() => {
+              setInfoCard(true);
+              setIsFlipped(true);
+            }}
+          >
+            match
+          </button>
+        </>
+      ) : (
+        <button type="button" onClick={() => setInfoCard(false)}>
+          retour
+        </button>
+      )}
+    </main>
   );
 }
 
