@@ -1,38 +1,70 @@
-.App {
-  text-align: center;
+/* VARIABLES */
+:root {
+  --primary-main-color: #76fcc9;
+  --primary-light-color: #76fcc9;
+  --primary-dark-color: #76fcc9;
+  --secondary-color: #b939d6;
+  --secondary-light-color: #b939d6;
+  --secondary-dark-color: #b939d6;
+  --light-color: #fafdf5;
+  --dark-color: #212f3c;
+  /*--gradient-main-color: ;*/
+  /*--gradient-light-color: ;*/
+  /*--gradient-dark-color: ;*/
+  --main-font: "Montserrat", Arial, Helvetica, sans-serif;
+  --border-radius: 10px;
+  --dark-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  --light-box-shadow: rgba(250, 253, 245, 0.24) 0px 3px 8px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*
+@font-face {
+  font-family: "Nickainley";
+  src: url("/font/Nickainley-Normal.woff2") format("woff2"),
+    url("/font/Nickainley-Normal.woff") format("woff");
+}
+*/
+
+html {
+  font-size: 16px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+body {
+  position: relative;
+  font-family: var(--main-font);
 }
 
-.App-link {
-  color: #61dafb;
+h1,
+h2,
+h3 {
+  font-weight: normal;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Button */
+button {
+  border: none;
+}
+button:not(:disabled) {
+  cursor: pointer;
+}
+
+/* Masquage d'element restant accessible aux lecteurs d'écran */
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
