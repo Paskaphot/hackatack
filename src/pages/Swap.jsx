@@ -13,6 +13,7 @@ function Swap() {
   const [random, setRandom] = React.useState(1);
   const [moreInfo, setMoreInfo] = React.useState();
   const [infoCard, setInfoCard] = React.useState(false);
+  const [isFlipped, setIsFlipped] = React.useState(false);
 
   async function fetchCity(number) {
     const response = await axios("https://api.teleport.org/api/urban_areas/");
@@ -65,23 +66,32 @@ function Swap() {
 
   return (
     <main className="swap">
-      <Card image={search} name={slug} moreInfo={moreInfo} />
-      <div className="swap__actions">
-        {infoCard === false ? (
-          <>
-            <button type="button" onClick={() => setRandom(randomNumber())}>
-              not match
-            </button>
-            <button type="button" onClick={() => setInfoCard(true)}>
-              match
-            </button>
-          </>
-        ) : (
-          <button type="button" onClick={() => setInfoCard(false)}>
-            retour
+      <Card
+        isFlipped={isFlipped}
+        image={search}
+        name={slug}
+        moreInfo={moreInfo}
+      />
+      {infoCard === false ? (
+        <>
+          <button type="button" onClick={() => setRandom(randomNumber())}>
+            not match
           </button>
-        )}
-      </div>
+          <button
+            type="button"
+            onClick={() => {
+              setInfoCard(true);
+              setIsFlipped(true);
+            }}
+          >
+            match
+          </button>
+        </>
+      ) : (
+        <button type="button" onClick={() => setInfoCard(false)}>
+          retour
+        </button>
+      )}
     </main>
   );
 }
