@@ -9,9 +9,6 @@ const Card = ({ image, name, moreInfo }) => {
       <div className="card__front">
         <img alt="landscape" src={image && image.photos[0].image.mobile} />
       </div>
-      <a href={moreInfo && moreInfo.data.teleport_city_url}>
-        More informations about the city
-      </a>
       <div className="card__back">
         <p className="card__match">
           C'est un match avec <h2> {name} !</h2>
@@ -23,6 +20,9 @@ const Card = ({ image, name, moreInfo }) => {
             <li>Capitale : </li>
             <li>Monnaie : </li>
           </ul>
+          <a href={moreInfo && moreInfo.data.teleport_city_url}>
+            More informations about the city
+          </a>
         </div>
       </div>
     </div>
