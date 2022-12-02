@@ -84,10 +84,15 @@ function Swap() {
             }}
           >
             <div>
-              <button type="button" onClick={() => setRandom(randomNumber())}>
+              <button
+                className="circleButton"
+                type="button"
+                onClick={() => setRandom(randomNumber())}
+              >
                 not match
               </button>
               <button
+                className="circleButton"
                 type="button"
                 onClick={() => {
                   setInfoCard(true);
@@ -117,6 +122,7 @@ function Swap() {
           </div>
         ) : (
           <button
+            className="circleButton"
             type="button"
             onClick={() => {
               setInfoCard(false);

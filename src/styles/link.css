@@ -6,8 +6,8 @@
   text-transform: uppercase;
   border-radius: var(--border-radius);
   color: var(--light-color);
-  background: var(--gradient-main-color);
+  background: var(--gradient-primary-main-color);
 }
 .fakeButton:hover {
-  background: var(--gradient-dark-color);
+  background: var(--gradient-primary-dark-color);
 }

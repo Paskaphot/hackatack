@@ -1,13 +1,33 @@
 /* VARIABLES */
 :root {
-  --primary-main-color: #07d4f3;
-  --primary-dark-color: #05a6bf;
-  --secondary-main-color: #066ef7;
-  --secondary-dark-color: #0555bd;
+  --primary-main-color: #2f8876;
+  --primary-light-color: #58a091;
+  --primary-dark-color: #05705a;
+  --secondary-main-color: #d08eff;
+  --secondary-light-color: #fee9ff;
+  --secondary-dark-color: #827090;
   --light-color: #fafdf5;
   --dark-color: #212f3c;
-  --gradient-main-color: linear-gradient(150deg, #066ef7 0%, #07d4f3 100%);
-  --gradient-dark-color: linear-gradient(150deg, #0555bd 0%, #05a6bf 100%);
+  --gradient-primary-main-color: linear-gradient(
+    150deg,
+    #58a091 0%,
+    #2f8876 100%
+  );
+  --gradient-primary-dark-color: linear-gradient(
+    150deg,
+    #2f8876 0%,
+    #05705a 100%
+  );
+  --gradient-secondary-main-color: linear-gradient(
+    150deg,
+    #fee9ff 0%,
+    #d08eff 100%
+  );
+  --gradient-secondary-dark-color: linear-gradient(
+    150deg,
+    #d08eff 0%,
+    #827090 100%
+  );
   --main-font: "Montserrat", Arial, Helvetica, sans-serif;
   --border-radius: 10px;
   --dark-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
