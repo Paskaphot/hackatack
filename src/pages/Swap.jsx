@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { React, useContext, useEffect, useState } from "react";
 import MatchsCityContext from "../context/MatchsCity";
 
+
 function Swap() {
   const [search, setSearch] = useState();
   //   const [searchIn, setSearchIn] = React.useState();
@@ -124,10 +125,24 @@ function Swap() {
             }}
           >
             retour
+
           </button>
-        )}
-      </div>
-    </div>
+          <button
+            type="button"
+            onClick={() => {
+              setInfoCard(true);
+              setIsFlipped(true);
+            }}
+          >
+            match
+          </button>
+        </>
+      ) : (
+        <button type="button" onClick={() => setInfoCard(false)}>
+          retour
+        </button>
+      )}
+    </main>
   );
 }
 
