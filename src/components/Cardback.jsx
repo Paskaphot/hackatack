@@ -8,7 +8,7 @@ function Cardback({ name, moreInfo, flag, moreMoreInfo }) {
       <p className="card__match">
         C'est un match avec <h2> {name} !</h2>
       </p>
-      <img src={flag} alt="drapeau" />
+      <img className="card__flag" src={flag} alt="drapeau" />
       {/* <ul>
         {moreMoreInfo &&
           moreMoreInfo.categories.map((el) => (
