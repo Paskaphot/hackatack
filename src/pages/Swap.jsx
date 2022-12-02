@@ -11,14 +11,15 @@ import { TbArrowBack } from "react-icons/tb";
 
 function Swap() {
   const [search, setSearch] = useState();
-  //   const [searchIn, setSearchIn] = React.useState();
-  //   const [search2, setSearch2] = React.useState();
   const [slug, setSlug] = useState("paris");
-  //   const [slug2, setSlug2] = React.useState("stockholm");
   const [random, setRandom] = useState(1);
   const [moreInfo, setMoreInfo] = useState();
+  const [moreMoreInfo, setMoreMoreInfo] = useState();
   const [infoCard, setInfoCard] = useState(false);
   const [isFlipped, setIsFlipped] = useState(false);
+  const [countryName, setCountryName] = useState("");
+  const [countryInfo, setCountryInfo] = useState("");
+  const [region, setRegion] = useState("");
   const { setCityMatched, cityMatched } = useContext(MatchsCityContext);
 
   async function fetchCity(number) {
@@ -27,25 +28,36 @@ function Swap() {
     setSlug(url.toLowerCase());
   }
 
+  async function fetchInfoByCountry(name) {
+    const response = await axios(`https://restcountries.com/v3.1/name/${name}`);
+    setCountryInfo(response.data[0]);
+  }
+
   async function fetchAPI(s) {
     const response = await axios(
       `https://api.teleport.org/api/urban_areas/slug:${s}/images/`
     );
+    console.log(response);
     setSearch(response.data);
   }
-
-  //   async function fetchAPI2(s) {
-  //     const response = await axios(
-  //       `https://api.teleport.org/api/urban_areas/slug:${s}/images/`
-  //     );
-  //     setSearch2(response.data);
-  //   }
 
   async function fetchMoreInfo(s) {
     const response = await axios(
       `https://api.teleport.org/api/urban_areas/slug:${s}/`
     );
+    let regionn = response.data.continent;
+    setRegion(regionn);
+    const cntryName = response.data.full_name.split(", ");
+    console.log(cntryName);
+    setCountryName(cntryName[1]);
     setMoreInfo(response);
+  }
+  async function fetchMoreMoreInfo(s) {
+    const response = await axios(
+      `https://api.teleport.org/api/urban_areas/slug:${s}/scores/`
+    );
+    console.log(response);
+    setMoreMoreInfo(response.data);
   }
 
   useEffect(() => {
@@ -53,17 +65,24 @@ function Swap() {
   }, [random]);
 
   useEffect(() => {
-    console.log(search);
-  }, [search]);
+    fetchInfoByCountry(countryName);
+  }, [moreInfo]);
 
   useEffect(() => {
     fetchAPI(slug);
     fetchMoreInfo(slug);
-    // fetchAPI2(search2);
-    console.log(cityMatched);
-    /*console.log(slug2);*/
-    // setSearchIn({ current: search, next: search2 });
+    fetchMoreMoreInfo(slug);
+    console.log(region);
+    console.log(`region2 ${region}`);
   }, [slug]);
+
+  useEffect(() => {
+    console.log(countryInfo);
+  }, [countryInfo]);
+
+  // useEffect(() => {
+  //   fetchInfoByCountry(countryName);
+  // }, [countryName]);
 
   const randomNumber = () => {
     return Math.floor(Math.random() * 266) + 1;
@@ -77,6 +96,8 @@ function Swap() {
           image={search}
           name={slug}
           moreInfo={moreInfo}
+          flag={countryInfo}
+          moreMoreInfo={moreMoreInfo}
         />
         {infoCard === false ? (
           <div
