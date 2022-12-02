@@ -2,6 +2,7 @@ import "../App.css";
 import React from "react";
 import axios from "axios";
 import Card from "../components/Card";
+import "../styles/swap.css";
 
 function Swap() {
   const [search, setSearch] = React.useState();
@@ -64,8 +65,8 @@ function Swap() {
   };
 
   return (
-    <div className="Swap">
-      <div>
+    <div className="swap">
+      <div className="cardContainer">
         <Card
           isFlipped={isFlipped}
           image={search}
@@ -88,7 +89,13 @@ function Swap() {
             </button>
           </div>
         ) : (
-          <button type="button" onClick={() => setInfoCard(false)}>
+          <button
+            type="button"
+            onClick={() => {
+              setInfoCard(false);
+              setIsFlipped(false);
+            }}
+          >
             retour
           </button>
         )}

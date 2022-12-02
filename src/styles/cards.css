@@ -17,7 +17,7 @@
   transform-style: preserve-3d;
 }
 
-.card.flipped .card__inner {
+.card__inner, .flipped {
   transform: rotateY(180deg);
 }
 
@@ -31,10 +31,11 @@
 .card__front {
   background-color: rgb(141, 199, 233);
   color: black;
+  transform: rotateY(180deg);
 }
 
 .card__back {
   background-color: rgb(141, 199, 233);
   color: white;
-  transform: rotateY(180deg);
 }
+
