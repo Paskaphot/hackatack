@@ -1,19 +1,24 @@
 import "../styles/cards.css";
 import React from "react";
 
-function Cardback({ name, moreInfo }) {
+function Cardback({ name, moreInfo, flag, moreMoreInfo }) {
+  console.log(moreMoreInfo);
   return (
     <div className="card__back">
       <p className="card__match">
         C'est un match avec <h2> {name} !</h2>
       </p>
-      <img src="" alt="drapeau" />
+      <img src={flag} alt="drapeau" />
+      <ul>
+        {moreMoreInfo &&
+          moreMoreInfo.categories.map((el) => (
+            <li>
+              Rate of {el.name}: {el.score_out_of_10.toFixed(2)}/10
+            </li>
+          ))}
+      </ul>
       <div className="card__infos">
-        <ul>
-          <li>Population : </li>
-          <li>Capitale : </li>
-          <li>Monnaie : </li>
-        </ul>
+        {moreMoreInfo && moreMoreInfo.summary.replace(/<\/?[^>]+(>|$)/g, "")}
         <a href={moreInfo && moreInfo.data.teleport_city_url}>
           More informations about the city
         </a>
