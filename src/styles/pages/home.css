@@ -1,0 +1,19 @@
+.home {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 40px;
+  height: calc(100vh - 115px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.home h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.home .fakeButton {
+  width: 9.05rem; /*145px*/
+}

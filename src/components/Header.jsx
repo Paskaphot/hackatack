@@ -1,12 +1,17 @@
 import React from "react";
+import "../styles/header.css";
 
 function Header() {
   return (
-    <div>
-      <h1>
-        <img alt="logo" src="" />
+    <header>
+      <h1 className="logoWrapper">
+        <img alt="logo" src="/images/logo-tripder.svg" />
+        <span className="logoWrapper__texts">
+          <span className="logoWrapper__mainText">TRIPDER</span>
+          Beyond pics
+        </span>
       </h1>
-    </div>
+    </header>
   );
 }
 
