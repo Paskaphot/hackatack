@@ -1,5 +1,4 @@
 .home {
-  max-width: 800px;
   margin: 0 auto;
   padding: 20px 40px;
   height: calc(100vh - 115px);
@@ -7,9 +6,14 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  background-image: url(../../../public/images/HomeBG2.png);
+  background-size: cover;
 }
 
 .home h2 {
   margin: 0;
   font-size: 1.25rem;
+}
+
+.backgroundImage {
 }

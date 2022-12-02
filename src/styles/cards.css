@@ -3,6 +3,7 @@
   width: 90%;
   max-width: 800px;
   perspective: 1000px;
+  height: 600px;
 }
 
 .card__inner {
@@ -13,6 +14,7 @@
   transform-style: preserve-3d;
   display: flex;
   justify-content: center;
+  height: 600px;
 }
 
 .card__inner,
