@@ -20,7 +20,11 @@ function Matchs() {
         {cityMatched.length &&
           cityMatched.map((el) => (
             <div
-              style={{ display: "flex", alignItems: "center", margin: "30px" }}
+              style={{
+                display: "flex",
+                alignItems: "flex-start",
+                margin: "30px",
+              }}
             >
               <img
                 style={{ height: "400px", borderRadius: "10px" }}

@@ -18,8 +18,14 @@ function Cardback({ name, moreInfo, flag, moreMoreInfo }) {
           ))}
       </ul> */}
       <div className="card__infos">
-        {moreMoreInfo && moreMoreInfo.summary.replace(/<\/?[^>]+(>|$)/g, "")}
-        <a href={moreInfo && moreInfo.data.teleport_city_url}>
+        <p>
+          {moreMoreInfo && moreMoreInfo.summary.replace(/<\/?[^>]+(>|$)/g, "")}
+        </p>
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href={moreInfo && moreInfo.data.teleport_city_url}
+        >
           More informations about the city
         </a>
       </div>
