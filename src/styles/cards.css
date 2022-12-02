@@ -11,6 +11,8 @@
   transition: transform 1s;
   transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
 }
 
 .card__inner,
@@ -40,8 +42,12 @@
 }
 
 .card__back {
-  padding: 20px 10px;
+  position: absolute;
+  margin-left: 0%;
+  width: 50%;
+  height: 600px;
+  width: 549px;
   border-radius: 10px;
-  background-color: rgb(141, 199, 233);
-  color: white;
+  color: black;
+  background-color: green;
 }
