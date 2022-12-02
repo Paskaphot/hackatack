@@ -5,6 +5,9 @@ import "../styles/swap.css";
 import { Link } from "react-router-dom";
 import { React, useContext, useEffect, useState } from "react";
 import MatchsCityContext from "../context/MatchsCity";
+import { AiFillHeart } from "react-icons/ai";
+import { IoMdClose } from "react-icons/io";
+import { TbArrowBack } from "react-icons/tb";
 
 function Swap() {
   const [search, setSearch] = useState();
@@ -89,7 +92,7 @@ function Swap() {
                 type="button"
                 onClick={() => setRandom(randomNumber())}
               >
-                not match
+                <IoMdClose />
               </button>
               <button
                 className="circleButton"
@@ -100,20 +103,12 @@ function Swap() {
                   setCityMatched((prev) => [...prev, [search, moreInfo]]);
                 }}
               >
-                match
+                <AiFillHeart />
               </button>
             </div>
             <div>
-              <Link
-                style={{
-                  backgroundColor: "grey",
-                  height: "40px",
-                  margin: "10px",
-                  borderRadius: "5px",
-                }}
-                to={`/Matchs`}
-              >
-                Go to matchs
+              <Link className="fakeButton" to={`/Matchs`}>
+                Go to all Matches
               </Link>
               {/* <button type="button" onClick={() => setCityMatched("")}>
                 Reset
@@ -129,7 +124,7 @@ function Swap() {
               setIsFlipped(false);
             }}
           >
-            retour
+            <TbArrowBack />
           </button>
         )}
       </div>
