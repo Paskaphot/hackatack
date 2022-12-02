@@ -9,14 +9,14 @@ function Cardback({ name, moreInfo, flag, moreMoreInfo }) {
         C'est un match avec <h2> {name} !</h2>
       </p>
       <img src={flag} alt="drapeau" />
-      <ul>
+      {/* <ul>
         {moreMoreInfo &&
           moreMoreInfo.categories.map((el) => (
             <li>
               Rate of {el.name}: {el.score_out_of_10.toFixed(2)}/10
             </li>
           ))}
-      </ul>
+      </ul> */}
       <div className="card__infos">
         {moreMoreInfo && moreMoreInfo.summary.replace(/<\/?[^>]+(>|$)/g, "")}
         <a href={moreInfo && moreInfo.data.teleport_city_url}>
